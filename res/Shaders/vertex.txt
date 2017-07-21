@@ -1,0 +1,17 @@
+#version 400 core
+
+in vec2 position;
+
+out vec3 color;
+
+uniform vec3 mixColor;
+uniform float zoomAmount = 1;
+uniform mat4 viewMatrix;
+
+void main(void){
+
+	vec4 position4f = viewMatrix * vec4(position, 0.0, 1.0);
+	gl_Position = vec4(position4f.x * zoomAmount, position4f.y * zoomAmount, 0.0, 1.0);
+	color = mixColor;
+
+}
