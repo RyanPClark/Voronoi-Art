@@ -1,8 +1,0 @@
-Prealpha 0.0.1 - 0.0.6
-Project began August 29th
- - 0.0.1: Added Voronoi diagrams as foundation for terrain generation
- - 0.0.2: Added Lloyd Relaxation to reduce clustering, as well as node structure
- - 0.0.3: Added Site naming system and site selection system
- - 0.0.4: Began switch to programmable pipeline Opengl
- - 0.0.5: Added primitive text rendering system (soon to be replaced)
- - 0.0.6: Completed switch to modern Opengl, added custom maps v1, and FPS counter (September 4, 2015)

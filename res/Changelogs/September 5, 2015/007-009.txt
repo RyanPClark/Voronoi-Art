@@ -1,8 +1,0 @@
-- 0.0.7: Finished text rendering v2 and added nations (September 5, 2015)
-- 0.0.8: Added colored text, added Gui highlights, added zooming and panning, added multiple lines for text, improved
-nation color generation, and added mouse action recognition (September 6, 2015) (Also drove a car for first time)
-- 0.0.9: Added several GUIs and ability to interact with them, as well as basic map selection (September 7, 2015)
-- 0.1.0: Added Gui navigation system and basic implementation (September 8 - 12, 2015)
-- 0.1.1: Added time, fast forwarding, and page loader + cleaned up code (September 12, 2015)
-- 0.1.2: Added interaction navigation system, added annexation, added first auto attacking(September 18, 2015)
-- 0.1.3: Added soldiers and transport
