@@ -1,7 +1,5 @@
 package rendering;
 
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
@@ -12,28 +10,12 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
-import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
-
-import toolbox.MyPaths;
 
 public class Loader {
 
 	private List<Integer> vaos = new ArrayList<Integer>();
 	private List<Integer> vbos = new ArrayList<Integer>();
 	private List<Integer> textures = new ArrayList<Integer>();
-	
-	public int loadTexture(String fileName){
-		fileName = MyPaths.makeTexturePath(fileName);
-		Texture texture = null;
-		try {
-			texture = TextureLoader.getTexture("PNG", new FileInputStream(fileName));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		int textureID = texture.getTextureID();
-		return textureID;
-	}
 	
 	public RawModel loadToVAO(float[] positions, int indices[], int dimensions){
 		int vaoID = createVAO();

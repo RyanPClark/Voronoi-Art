@@ -1,19 +1,10 @@
 package rendering;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-
-import javax.imageio.ImageIO;
-
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.PixelFormat;
-import org.newdawn.slick.opengl.ImageIOImageData;
-
-import toolbox.MyPaths;
 
 public class DisplayManager {
 
@@ -40,14 +31,6 @@ public class DisplayManager {
 			Display.setResizable(true);
 
 		} catch (LWJGLException e) {
-			e.printStackTrace();
-		}
-		try {
-			Display.setIcon(new ByteBuffer[] {
-			        new ImageIOImageData().imageToByteBuffer(ImageIO.read(new File(MyPaths.makeTexturePath("misc/gameIcon"))), false, false, null),
-			        new ImageIOImageData().imageToByteBuffer(ImageIO.read(new File(MyPaths.makeTexturePath("misc/gameIcon"))), false, false, null)
-			});
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

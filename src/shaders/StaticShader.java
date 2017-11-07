@@ -3,12 +3,10 @@ package shaders;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Vector3f;
 
-import toolbox.MyPaths;
-
 public class StaticShader extends ShaderProgram{
 
-	private static final String VERTEX_FILE = MyPaths.makeShaderPath("vertex");
-	private static final String FRAGMENT_FILE = MyPaths.makeShaderPath("fragment");
+	private static final String VERTEX_FILE = "vertex.txt";
+	private static final String FRAGMENT_FILE = "fragment.txt";
 
 	private int location_transformationMatrix;
 	private int location_projectionMatrix;
