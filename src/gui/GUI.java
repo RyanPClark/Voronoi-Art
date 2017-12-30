@@ -25,7 +25,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import voronoi.Main;
+import rewrite.Main;
 
 public class GUI extends Application {
 
@@ -124,9 +124,14 @@ public class GUI extends Application {
 
        primaryStage.setTitle("Voronoi Art");
        primaryStage.setResizable(false);
-       primaryStage.getIcons().add(
-    		   new Image(
-    		      GUI.class.getResourceAsStream( "voronoi-icon.png" )));
+       try {
+           primaryStage.getIcons().add(
+        		   new Image(
+        		      GUI.class.getResourceAsStream( "voronoi-icon.png" )));
+       }
+       catch(NullPointerException e) {
+    	   System.err.println("voronoi-icon.png not found");
+       }
        primaryStage.setScene(scene);
        primaryStage.show();
    }
@@ -136,6 +141,9 @@ private static void stylize(String fileAddress, Text actionTarget, int numPolygo
 {
 	BufferedImage image = null;
 
+	String fileName = fileAddress.substring( fileAddress.lastIndexOf('/')+1, fileAddress.length() );
+	String fileNameWithoutExtn = fileName.substring(0, fileName.lastIndexOf('.'));
+	
 	try {
 		if (fileAddress.startsWith("http")){
 			URL url = new URL(fileAddress);
@@ -150,7 +158,7 @@ private static void stylize(String fileAddress, Text actionTarget, int numPolygo
 		return;
 	}
 
-	Main.renderImage(image, numPolygons);
+	Main.renderImage(image, fileNameWithoutExtn, numPolygons);
 }
 
 public static void main(String[] args) {
